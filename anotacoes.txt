@@ -1,0 +1,4 @@
+Aula 01:
+1. Arrow Functions
+2. Default Function Arguments
+3. Enhanced Object Literals
