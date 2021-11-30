@@ -2,7 +2,7 @@
 
 //Função clássica 
 function log(value) {
-    console.log(value);
+    console.log(value); // test
 }
 
 log('test');
@@ -16,7 +16,7 @@ log('test');
 //Função anônima
 //Atribuindo a uma variável:
 var log = function(value) {
-    console.log(value);
+    console.log(value);   //test
 };
 
 log('test');
@@ -32,12 +32,12 @@ var sumOld = function(a, b) {
     return a + b;
 };
 
-console.log(sumOld(5, 20));
+console.log(sumOld(5, 20)); //25
 
-//Função sum com Arrow Function 
+//Função sum com Arrow Function (Return implícito)
 var sum = (a, b) => a + b;   //Omitindo return(apenas uma expressão)
 
-console.log(sum(5, 15));
+console.log(sum(5, 15)); //20
 
 /*
 - Obrigatoriamente usar os caractéres =>
@@ -49,4 +49,26 @@ de funções.
 - Omitir a palavra function.
 - Parênteses(na maioria dos casos) para os argumentos.
 - E o retorno implícito no lado direito.
+
+
+- Tudo que não for uma expressão como: 
+ternários, 
+operadores lógicos, 
+funções invocadas e já retornando algo, 
+sempre que fazer um statement, como:
+- Declaração de variáveis,
+- Condicionais com if e 
+- outros, obrigatoriamente tem que ter chaves que envolveram o bloco.
 */
+//Return não implícito(com chaves envolvendo o bloco obrigatórias):
+var sum = (a, b) => {
+    var x = 10;
+
+    if (a > b) {
+
+    }
+    return a + b;
+}
+
+console.log(sum(5, 6)); //11
+
