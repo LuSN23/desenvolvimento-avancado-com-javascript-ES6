@@ -117,3 +117,18 @@ console.log(new Car()); //Retorna erro de que Car não é um constructor
 
 //1ª forma de construir objetos no JavaScript = Object Literals/Objetos Literais
 //2ª forma de construir objetos no JavaScript = Function constructors/Funções Construtoras
+
+
+//Hoisting
+/* 
+Relembrando: Funções clássicas tinham essa característica atreladas a funções e variáveis 
+declaradas com var de serem movidas para o topo do código. 
+- Era possível invocar a função antes de declará-la, sem a necessidade de preocupação com a ordem de 
+escrita no código.
+*/
+//Comportamento clássico de hoisting:
+log('teste'); // 'teste'         Irá funcionar normalmente, içando a declaração da função
+
+function log(value) {
+    console.log(value);
+}
