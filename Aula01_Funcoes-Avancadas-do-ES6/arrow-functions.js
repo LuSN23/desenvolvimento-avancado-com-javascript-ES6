@@ -108,6 +108,12 @@ function Car() {
 
 console.log(new Car()); //Instanciando novo objeto a partir da função construtora Car
 
+//Demonstrando como não é possível criar Function constructor com Arrow Functions
+var Car = () => {
+    this.foo - 'bar'; //O problema tem a ver com a palavra this e contexto/escopo de Arrow Functions
+};
+
+console.log(new Car()); //Retorna erro de que Car não é um constructor
 
 //1ª forma de construir objetos no JavaScript = Object Literals/Objetos Literais
 //2ª forma de construir objetos no JavaScript = Function constructors/Funções Construtoras
