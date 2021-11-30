@@ -100,4 +100,14 @@ var createObj = () => ({ teste: 123 }); //Para indicar retorno de um objeto lite
                                         //o uso de chaves dentro dos parênteses
 console.log(createObj());
 
+
+//Como são criados objetos a partir de uma função construtora da "maneira clássica"
+function Car() {
+    this.foo = 'bar';
+}
+
+console.log(new Car()); //Instanciando novo objeto a partir da função construtora Car
+
+
 //1ª forma de construir objetos no JavaScript = Object Literals/Objetos Literais
+//2ª forma de construir objetos no JavaScript = Function constructors/Funções Construtoras
