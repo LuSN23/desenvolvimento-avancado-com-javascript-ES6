@@ -86,3 +86,10 @@ var sum = (...a) => a;
 
 //Com default values também é obrigatório o uso dos parênteses
 var sum = (a = 5) => a;
+
+
+
+//Como são declarados object literals da maneira clássica
+var obj = {
+    test: '123'
+};
