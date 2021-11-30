@@ -93,3 +93,11 @@ var sum = (a = 5) => a;
 var obj = {
     test: '123'
 };
+
+
+//Return de Object Literals com Arrow Functions
+var createObj = () => ({ teste: 123 }); //Para indicar retorno de um objeto literal, 
+                                        //o uso de chaves dentro dos parênteses
+console.log(createObj());
+
+//1ª forma de construir objetos no JavaScript = Object Literals/Objetos Literais
