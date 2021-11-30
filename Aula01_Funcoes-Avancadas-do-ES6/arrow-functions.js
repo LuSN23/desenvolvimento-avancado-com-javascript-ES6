@@ -72,3 +72,17 @@ var sum = (a, b) => {
 
 console.log(sum(5, 6)); //11
 
+
+//Parênteses dos argumentos
+//Quando há apenas 1 argumento posso omití-los
+var sum = a => a + 5; 
+console.log(sum(5));  //10
+
+//Quando há um destructuring assignment é obrigatório usar os parênteses
+var sum = ({ a }) => a; //Sintaxe de destructuring ({})
+
+//Para fazer um REST operator também é obrigatório usar os parênteses
+var sum = (...a) => a;
+
+//Com default values também é obrigatório o uso dos parênteses
+var sum = (a = 5) => a;
