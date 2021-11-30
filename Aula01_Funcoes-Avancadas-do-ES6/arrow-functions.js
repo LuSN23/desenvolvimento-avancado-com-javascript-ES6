@@ -132,3 +132,10 @@ log('teste'); // 'teste'         Irá funcionar normalmente, içando a declaraç
 function log(value) {
     console.log(value);
 }
+
+//Comportamento com uma Arrow Function (não irá funcionar)
+log('teste2');  //Retorna erro de que log não é uma função porque ainda não foi declarada e nesse caso 
+                //tratando de arrow function, importa a ordem
+var log = value => {
+    console.log(value);
+}
