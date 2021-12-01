@@ -210,7 +210,8 @@ var obj = {
 obj.showContext();
 
 
-//Consertando a referência do this em funções clássicas
+//Consertando a referência do this em funções clássicas:
+//1-Fixando o contexto com bind()
 //Apenas o trecho de código a ser mexido dos exemplos acima:
 setTimeout(
     function(){
@@ -221,7 +222,30 @@ setTimeout(
 //Era uma das formas de resolver o problema de escopo do this, porém verboso e podia ser mais fácil 
 //esquecer de colocar o bind() para fixar o escopo no objeto correto e dar problema no código
 
+
+//2-Armazenando o contexto em uma variável:
+var obj = {
+    showContext: function showContext() {
+        var _that = this;       //Armazenando/salvando o contexto dentro de _that
+    setTimeout(function() {
+        _that.log('after 1000ms');
+        }, 1000);
+    },
+    log: function log(value) {
+        console.log(value);
+    }
+  };
+
+obj.showContext();
+
+//Porém você tinha que lembrar de colocar essa variável, o que poluia o código e deixava-o menos claro
+
+
+
+
+
 //Vantagens de arrow functions:
 /*
 - Escrita mais enxuta, mais limpa
+- Facilidade com escopo, referência do this sempre é a do código que a envolve.
 */
