@@ -209,6 +209,18 @@ var obj = {
 
 obj.showContext();
 
+
+//Consertando a referência do this em funções clássicas
+//Apenas o trecho de código a ser mexido dos exemplos acima:
+setTimeout(
+    function(){
+        console.log(this);
+    }.bind(this), //Pode ser usado apply() ou bind(), para fixar o contexto aqui(do obj), 
+    1000          //independente de onde ela for invocada
+);
+//Era uma das formas de resolver o problema de escopo do this, porém verboso e podia ser mais fácil 
+//esquecer de colocar o bind() para fixar o escopo no objeto correto e dar problema no código
+
 //Vantagens de arrow functions:
 /*
 - Escrita mais enxuta, mais limpa
