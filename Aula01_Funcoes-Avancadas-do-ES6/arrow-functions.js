@@ -244,8 +244,32 @@ obj.showContext();
 
 
 
-//Vantagens de arrow functions:
+//O this/contexto com Arrow Functions
+var obj = {                                //Chaves do objeto envolvendo a função/método setTimeout()
+    showContext: function showContext() {  //que determina seu contexto
+        setTimeout(() => {
+            this.log('after 1000ms');    //Contexto é obj
+        }, 1000);
+    },
+    log:  function log(value){
+        console.log(value);
+    }
+};
+
+obj.showContext();
+
+
+
+
+//Uma das características das arrow functions é que o contexto delas é sempre a do objeto que as 
+//envolve, facilitando saber qual o contexto o this faz referência. 
+//Atenção para não usar o bind() nesse caso
+
+
+//'Vantagens' de arrow functions:
 /*
 - Escrita mais enxuta, mais limpa
-- Facilidade com escopo, referência do this sempre é a do código que a envolve.
+- Legibilidade
+- Resolução de confusões/problemas encontrados nas funções clássicas referentes a escopo
+- Facilidade com escopo, referência do this sempre é a do código/objeto {} que a envolve.
 */
