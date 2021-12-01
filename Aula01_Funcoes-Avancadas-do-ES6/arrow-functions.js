@@ -139,3 +139,77 @@ log('teste2');  //Retorna erro de que log não é uma função porque ainda não
 var log = value => {
     console.log(value);
 }
+
+
+//Contexto/Escopo das Arrow Functions
+//Técnicas para identificar this no modelo clássico:
+var obj = {
+    showContext: function showContext() {              //Método
+        console.log(this); //Para verificar o escopo
+    },
+    log: function log(value) {                         //Método
+        console.log(value);
+    } 
+};
+obj.showContext(); //Acessando showContext dentro de obj
+/*
+Existiam algumas técnicas para identificar o escopo de this:
+- Antes bastava olhar para o lado esquerdo e você saberia para onde o this apontaria, nesse caso obj.
+- Porque temos o contexto de invocação no JS(em que as funções são executadas onde são invocadas, no 
+caso, o objeto que a invoca).
+*/
+//No caso acima eu poderia:
+var obj = {
+    showContext: function showContext() {              //Método
+        this.log('teste'); //teste
+        //Chamar o método log, fazendo referência ao this(obj)
+    },
+    log: function log(value) {                         //Método
+        console.log(value);
+    } 
+};
+obj.showContext(); 
+
+//Não seria tão simples porque supomos que invocamos uma função da API do browser a setTimetout()
+//Erro de identifiação do escopo:
+var obj = {
+    showContext: function showContext() {
+        this.log('teste'); //obj.log('teste')
+    //Supondo que queremos invocar o método showContext após 1s(1000ms) usamos setTimeout(), o 1º 
+    //parâmetro é a função a ser executada, o 2º o tempo mínimo para ela ser executada
+    setTimeout(function() { 
+        this.log('after 1000ms');      //Erro: this.log is not a function
+    }, 1000);
+  },
+  log: function log(value) {
+      console.log(value);
+  }
+};
+
+obj.showContext();
+
+/*
+ *ATENÇÃO: A explicação para o erro acima, é que porque as funções terem contextos de invocação, essas 
+funções como setTimeout() e outras como as de timer, as de callback e request, de event listeners, são 
+invocadas no conexto global.
+- Então se eu for dentro da função setTimeOut() e pedir para mostrar o contexto dela, será 
+window(objeto do escopo global do browser) como demonstrado abaixo
+*/
+var obj = {
+    showContext: function showContext() {
+        this.log('teste');
+    setTimeout(function() {
+        console.log(this);         //window
+    }, 1000);    
+  },
+    log: function log(value){
+        console.log(value);
+    }
+};
+
+obj.showContext();
+
+//Vantagens de arrow functions:
+/*
+- Escrita mais enxuta, mais limpa
+*/
