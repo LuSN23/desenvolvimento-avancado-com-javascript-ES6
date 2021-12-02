@@ -51,3 +51,16 @@ var obj = {
 };
 
 console.log(obj.sum(1,5));  //6
+
+//Escrevendo método dentro de objeto no ES6
+var obj = {
+    sum(a, b) {       //A mesma coisa, sem escrever sum 2 vezes, como propriedade e como nome de função 
+        return a + b; //e omitindo function
+    }
+};
+
+console.log(obj.sum(1, 5)); //6
+console.log(obj); //Para visualizar que foi criado um método sum dentro de obj
+
+//É possível escrever diretamente a função, sem até mesmo a palavra function, 
+//deixando menos código e sendo mais direto ao ponto
