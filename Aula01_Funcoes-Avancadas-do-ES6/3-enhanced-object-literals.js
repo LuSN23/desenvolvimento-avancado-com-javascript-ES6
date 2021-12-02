@@ -28,5 +28,15 @@ var prop1 = 'Digital Innovation One';
 var obj = {
     prop1       //Omitindo o lado direito(shorthand/abreviação) do que repetir o nome da variável que 
                 //é o mesmo da propriedade, o JS agora entende que tá fazendo a referência sozinho
-};
+};              //propriedade e variável
 
+//Método
+function method1() {
+    console.log('method called');
+}
+
+var obj = {
+    method1        //O mesmo que com propriedade e variável
+};            
+
+obj.method1();    //método e função
