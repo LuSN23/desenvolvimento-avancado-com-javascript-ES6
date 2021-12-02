@@ -64,3 +64,16 @@ console.log(obj); //Para visualizar que foi criado um método sum dentro de obj
 
 //É possível escrever diretamente a função, sem até mesmo a palavra function, 
 //deixando menos código e sendo mais direto ao ponto
+
+
+
+//Acessando valor de variável no escopo externo e transformando-o em propriedade dentro de um objeto
+//Versão clássica:
+var propName = 'test';
+
+var obj = {};
+
+obj[propName] = 'prop value'; //Acessando objeto e referenciando o valor da variável propName, como 
+                              //novo nome de propriedade(test) e atribuindo valor 'prop value' para 
+                              //dentro dela
+console.log(obj); //{ test: 'prop value' }
