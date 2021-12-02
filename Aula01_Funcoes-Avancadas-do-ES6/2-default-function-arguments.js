@@ -75,3 +75,20 @@ function multiply(a, b = 1) { //basta usar o sinal =
 
 console.log(multiply(5)); //5    se aqui for (5, 0) também vai funcionar normalmente
 
+
+//Fazer referência a outro parâmetro
+function multiply(a, b = a){  //b tem o mesmo valor de a
+    return a * b;
+}
+
+console.log(multiply(5)); //25  5 * 5 (a = 5, b = a), ambos são 5
+
+//* Prestar atenção na ordem porque é importante, porque se o valor vier após ele será lido como 
+//undefined, porque ainda não foi atribuido, definido
+function multiply(b = a, a) { //Dará erro, porque irá ler b como undefined, já que a não tem um 
+    return a * b;             //valor quando b é chamado
+}
+
+console.log(multiply(5)); //NaN
+//Uncaught ReferrenceError: Cannot access 'a' before initialization
+//*ATENÇÃO na ordem!
