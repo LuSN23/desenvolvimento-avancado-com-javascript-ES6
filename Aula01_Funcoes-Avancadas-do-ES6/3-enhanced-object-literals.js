@@ -12,7 +12,7 @@ var obj = {
 
 
 //Outra maneira de atribuir valores para propriedades e métodos, na maneira clássica
-//Referenciando uma variável
+//Referenciando uma variável(Modelo clássico)
 var prop1 = 'Digital Innovation One';
 
 var obj = {
@@ -20,3 +20,13 @@ var obj = {
 };
 
 console.log(obj); // { prop1: 'Digital Innovation One' }
+
+//Referenciando uma variável(ES6)
+//Propriedade:
+var prop1 = 'Digital Innovation One';
+
+var obj = {
+    prop1       //Omitindo o lado direito(shorthand/abreviação) do que repetir o nome da variável que 
+                //é o mesmo da propriedade, o JS agora entende que tá fazendo a referência sozinho
+};
+
