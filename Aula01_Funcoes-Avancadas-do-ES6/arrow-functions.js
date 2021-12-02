@@ -91,7 +91,7 @@ var sum = (a = 5) => a;
 
 //Como são declarados object literals da maneira clássica
 var obj = {
-    test: '123'
+    teste: '123'
 };
 
 
@@ -110,7 +110,7 @@ console.log(new Car()); //Instanciando novo objeto a partir da função construt
 
 //Demonstrando como não é possível criar Function constructor com Arrow Functions
 var Car = () => {
-    this.foo - 'bar'; //O problema tem a ver com a palavra this e contexto/escopo de Arrow Functions
+    this.foo = 'bar'; //O problema tem a ver com a palavra this e contexto/escopo de Arrow Functions
 };
 
 console.log(new Car()); //Retorna erro de que Car não é um constructor
@@ -175,7 +175,7 @@ obj.showContext();
 var obj = {
     showContext: function showContext() {
         this.log('teste'); //obj.log('teste')
-    //Supondo que queremos invocar o método showContext após 1s(1000ms) usamos setTimeout(), o 1º 
+    //Supondo que queremos invocar o método showContext() após 1s(1000ms) usamos setTimeout(), o 1º 
     //parâmetro é a função a ser executada, o 2º o tempo mínimo para ela ser executada
     setTimeout(function() { 
         this.log('after 1000ms');      //Erro: this.log is not a function
