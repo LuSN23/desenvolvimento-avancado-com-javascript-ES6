@@ -92,3 +92,30 @@ function multiply(b = a, a) { //Dará erro, porque irá ler b como undefined, j�
 console.log(multiply(5)); //NaN
 //Uncaught ReferrenceError: Cannot access 'a' before initialization
 //*ATENÇÃO na ordem!
+
+
+//Usando Lazy Evaluation
+//Supondo que queremos um número randômico toda vez que alguém esqueça de passar um parâmetro
+function randomNumber() {
+    console.log('Generating a random number...');
+
+    return Math.random() * 10;
+}
+
+function multiply(a, b = randomNumber()){ //b é apenas um número aleatório quando não é passado
+    return a * b;      //A função randomNumber() só é chamada no caso de b não ser definido
+}
+
+console.log(multiply(5));
+console.log(multiply(5));   //Toda vez que você deixa de passar um parâmetro a função é invocada 
+                            //novamente(lazy evaluation)
+
+/*
+(Avaliação preguiçosa)
+LAZY EVALUATION(ou CALL-BY-NEED) = Na teoria de linguagem de programação, é uma estratégia de 
+avaliação o que atrasa a avaliação de uma expressão até que o seu valor seja necessário(e não na sua atribuição) 
+e que também evita repetidas avaliações(as avaliações são diferentes).
+- Basicamente, só é executada quando chamada, quando necessária.
+- O exemplo acima, é bom para gerar IDs randômicos, disparar erros caso a pessoa esqueça de passar
+algum parâmetro e outros em que a função gere um valor.
+*/
