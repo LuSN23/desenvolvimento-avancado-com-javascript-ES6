@@ -86,5 +86,18 @@ var propName = 'test';
 var obj = {};  //O  problema é que teria que definir o objeto antes, e depois fazer a definição abaixo
 
 obj[propName + 'concat'] = 'prop value'; // Concatena o valor de propName com 'concat'
-
+//Aqui foi feito uma referência à obj, já que está fora dele
 console.log(obj); // { testconcat: 'prop value' }
+
+
+//Com o ES6, é possível fazer o que foi feito acima, dentro do objeto diretamente(sem criar obj antes)
+var propName = 'test';
+
+var obj = {
+    [propName + 'concat']: 'prop value'  //Dentro de obj
+    //Aqui não é feito uma referência à obj mas está dentro direto
+};
+
+console.log(obj);  // { testconcat: 'prop value' }   mesmo resultado
+//Diminuição de linhas de código, e centralização da propriedade dentro do objeto, uma área só, 
+//trazendo legibilidade
