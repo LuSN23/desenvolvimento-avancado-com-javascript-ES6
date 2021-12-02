@@ -26,3 +26,13 @@ function multiply(a, b) {
 }
 
 console.log(multiply(5)); //5
+
+
+//Problema com uso do operador lógico || 
+function multiply(a, b) {
+    b = b || 1; //Ao invés de 5 * 0, a validação aqui, lê 0 como false e vai para o true que é 1
+                        //Resultando num comportamento atípico
+    return a * b;
+}
+
+console.log(multiply(5, 0)); //Passando 0 como parâmetro para o b    //5   mesmo resultado
