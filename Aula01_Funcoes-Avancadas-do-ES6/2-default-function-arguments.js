@@ -65,3 +65,13 @@ console.log(multiply(5));
 //Porém continua verboso, também dificulta para outros desenvolvedores lerem o código e entenderem
 
 
+
+//Com o ES6, posso atribuir valores padrão/default function arguments sem
+//ser verboso com toda a validação necessária naqueles casos, e que se comporta da mesma maneira 
+//em casos em que o parâmetro não é passado, ou passado com valor undefined
+function multiply(a, b = 1) { //basta usar o sinal =
+    return a * b;
+}
+
+console.log(multiply(5)); //5    se aqui for (5, 0) também vai funcionar normalmente
+
