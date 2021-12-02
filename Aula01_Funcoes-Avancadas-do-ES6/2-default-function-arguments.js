@@ -15,4 +15,14 @@ function multiply(a, b) {
 }
 
 console.log(multiply(5)); //NaN  porque esqueceu-se de passar 1 número e a multiplicação foi de 
-                          //5 * undefined(número não definido) 
+                          //5 * undefined(número não definido)
+
+//As resoluções antigas para isso eram:
+//1 - Recorrer ao operador lógico || (OU) 
+function multiply(a, b) {
+    b = b || 1; //b vale o parâmetro passado(se ele for true) ou 1, para efetuar a multiplicação
+                //garantindo que undefined é valerá 1
+    return a * b;
+}
+
+console.log(multiply(5)); //5
