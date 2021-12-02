@@ -40,3 +40,14 @@ var obj = {
 };            
 
 obj.method1();    //método e função
+
+
+
+//Escrevendo método dentro de objeto na versão clássica
+var obj = {
+    sum: function sum(a, b) {      //Aqui pode ser uma função anônima também function(a, b) {} 
+        return a + b;
+    }
+};
+
+console.log(obj.sum(1,5));  //6
