@@ -31,7 +31,7 @@ console.log(multiply(5)); //5
 //Problema com uso do operador lógico || 
 function multiply(a, b) {
     b = b || 1; //Ao invés de 5 * 0, a validação aqui, lê 0 como false e vai para o true que é 1
-                        //Resultando num comportamento atípico
+                        //Resultando num comportamento atípico (undefined é false)
     return a * b;
 }
 
@@ -49,3 +49,19 @@ console.log(multiply(5, 0)); //0     Assim o comportamento seria como o esperado
                                     //Se eu omitir 1 número, também irá funcionar
 
 //Porém esse método é verboso
+
+
+//(Poderia usar também)Usando if para resolver o problema com o operador lógico ||
+function multiply(a, b) {
+    if (typeof b === 'undefined') {
+        b = 1;
+    }
+
+    return a + b;
+}
+
+console.log(multiply(5));
+
+//Porém continua verboso, também dificulta para outros desenvolvedores lerem o código e entenderem
+
+
