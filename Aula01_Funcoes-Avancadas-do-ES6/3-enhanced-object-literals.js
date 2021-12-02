@@ -77,3 +77,14 @@ obj[propName] = 'prop value'; //Acessando objeto e referenciando o valor da vari
                               //novo nome de propriedade(test) e atribuindo valor 'prop value' para 
                               //dentro dela
 console.log(obj); //{ test: 'prop value' }
+
+
+//Poderia também utilizar concatenação, fazer qualquer tipo de operação, colocar uma função que 
+//retornasse esse nome ou outras coisas dentro dos colchetes
+var propName = 'test';
+
+var obj = {};  //O  problema é que teria que definir o objeto antes, e depois fazer a definição abaixo
+
+obj[propName + 'concat'] = 'prop value'; // Concatena o valor de propName com 'concat'
+
+console.log(obj); // { testconcat: 'prop value' }
